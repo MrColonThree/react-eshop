@@ -3,7 +3,7 @@ import { useState } from "react";
 const Product = ({ product, handleClickAddToCart }) => {
   const { thumbnail, title, price, rating, stock, description } = product;
   const [showFullDescription, setShowFullDescription] = useState(false);
-  const maxLength = 70;
+  const maxLength = 50;
   const modifiedDescription =
     description.length > maxLength
       ? description.slice(0, maxLength) + "..."
