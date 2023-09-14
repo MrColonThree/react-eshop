@@ -26,8 +26,8 @@ const Products = ({ handleClickAddToCart }) => {
 
 
   return (
-    <div className="w-3/4">
-      <div className="flex justify-between items-center">
+    <div className="w-full md:w-3/4">
+      <div className="flex flex-col md:flex-row justify-between items-center mb-5 md:mb-auto">
       <h1 className="text-2xl my-5 font-semibold">Number of products: {products.length}</h1>
       <div>
       <button onClick={()=>sortProducts(products)} className="bg-blue-500 text-xl font-semibold px-3 py-2 rounded-lg text-white">Sort by price</button>

@@ -6,7 +6,7 @@ const Product = ({ product, handleClickAddToCart }) => {
   const maxLength = 50;
   const modifiedDescription =
     description.length > maxLength
-      ? description.slice(0, maxLength) + "..."
+      ? description.slice(0, maxLength)+ " "
       : description;
 
   const showSeeMore = description.length > maxLength;
@@ -14,7 +14,7 @@ const Product = ({ product, handleClickAddToCart }) => {
     setShowFullDescription(true);
   };
   return (
-    <div className="p-5 rounded-lg shadow-lg border-2">
+    <div className="p-5 rounded-lg shadow-lg border-2 w-3/4 md:w-auto mx-auto">
       <img className="h-48 mx-auto rounded-lg" src={thumbnail} alt="" />
       <h2 className="text-2xl font-semibold mt-5">{title}</h2>
       <div className="my-2">
@@ -25,7 +25,7 @@ const Product = ({ product, handleClickAddToCart }) => {
             className="text-blue-600 font-semibold"
             onClick={handleSeeMoreClick}
           >
-            See More
+            See More...
           </button>
         )}
         </p>

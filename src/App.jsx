@@ -20,13 +20,20 @@ function App() {
       });
       const temp = budget - sum;
       if (temp < 0) {
-        return alert("Balance Empty!!!");
+        return alert("You don't have enough balance!!!");
       } else {
         setTotalCost(sum);
         setRemaining(temp);
         setCart(newCart);
       }
     }
+  };
+
+  const handleRemove = (product) => {
+    const remainingCart = cart.filter((item) => item.id !== product.id);
+    setCart(remainingCart);
+    setRemaining(remaining + product.price);
+    setTotalCost(totalCost - product.price);
   };
 
   return (
@@ -43,6 +50,7 @@ function App() {
           remaining={remaining}
           totalCost={totalCost}
           budget={budget}
+          handleRemove={handleRemove}
         ></Cart>
       </div>
     </>
